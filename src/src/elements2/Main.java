@@ -1,4 +1,4 @@
-package elements2;
+package src.elements2;
 
 public class Main {
 
