@@ -1,0 +1,12 @@
+        O--O
+        IW I
+O-----O I  O------O
+IB    O-O @  1 # AI
+I   Q  #   O-O-OO-O
+I     O-O  I I II I
+I1    I I  O-O-OO-O
+I 1   I I  O-O-OO-O
+I1    I I  I I II I
+I 1O--O-O##O-O-OO-OO
+I               C YI
+O------------------O

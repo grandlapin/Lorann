@@ -1,0 +1,11 @@
+O-----O--------O
+I3   CIW 2    AI
+IY O  I  #     I
+I  I  I  O--O  I
+I  I  I  IQDI  I
+I  I  I  O  I  I
+I  I  IB #  I  I
+I  O  O-----O  I
+I     + O O #  I
+I@   O O O O4 +I
+O--------------O

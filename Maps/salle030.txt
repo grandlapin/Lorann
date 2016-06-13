@@ -1,0 +1,12 @@
+  O-O   O--------O-O
+  IWO-O I  A    O  I
+  OO OO-O      O B I
+   IO   O     O    I
+  OO O   O   O     I
+  IY +O   O+O  32  I
+  OO  #O   O   23  I
+   I   #O O O      I
+   IO   OO   O   C I
+  OOO  O--O   O    I
+  I@   I  OODQO-O  I
+  O----O   O--O O--O

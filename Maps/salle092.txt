@@ -1,0 +1,12 @@
+O-----O-----O------O
+I231  I A   O   D  I
+I     I            I
+O-O O-O-O#O-O--O#O-O
+I     O     O      I
+I  B  Y  @  +   1  I
+I     O     O      I
+O-O#O-O-O#O-O--OWO-O
+I           I      I
+I     O  C  I      I
+IQ    I     I      I
+O-----O-----O------O

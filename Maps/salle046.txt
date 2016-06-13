@@ -1,0 +1,12 @@
+O------------------O
+I           B      I
+I YO O O O O O O   I
+I              I   I
+O--O-O-O-O-O   O   I
+IQ # # # #   O1  @ I
+O-O # # # #  1O    I
+O-O-O-O-O-OO   O   I
+I              I   I
+I WO O O O O O O   I
+I           D      I
+O------------------O

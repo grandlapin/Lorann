@@ -1,0 +1,12 @@
+  OO---------------O
+ OO                I
+OO          ###  @ I
+O Y O-------O1O O--O
+I   I    A    I    I
+I   I O-------O--O I
+I   I    B   1I    I
+I   O-------O I O--O
+I   I    C   1I    I
+O++ I O------OO--O I
+IQ  I    D  1I1 W  I
+O---O--------O-----O

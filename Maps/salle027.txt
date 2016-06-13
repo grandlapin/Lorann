@@ -1,0 +1,12 @@
+O------------------O
+I3 D      #       3I
+I O----O    O O--O I
+I IQ        I      I
+I O O----O  I     #I
+I   I3      O  O   I
+I#Y O  O  @   3I   I
+I      I  O----O O I
+I      I        WI I
+I O--O O    O----O I
+I3 C      #     B 3I
+O------------------O

@@ -1,0 +1,12 @@
+      O----O
+  O---O WQ O---O
+  I     ++    BI
+  I    1  1    I
+  O---O#  #O---O
+      I    I
+ O--O I Y@ I  O--O
+ IOOI I    I  IOOI
+ IOOI I    I  IOOI
+ O--O I    I  O--O
+      I    I
+      O----O
