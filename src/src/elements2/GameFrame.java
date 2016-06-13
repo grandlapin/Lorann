@@ -1,5 +1,7 @@
 package src.elements2;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
 
 public class GameFrame extends JFrame {
@@ -12,6 +14,7 @@ public class GameFrame extends JFrame {
 		this.add(new GameBoard());
 		this.setResizable(false);
 		this.setVisible(true);
+
 	}
 
 }

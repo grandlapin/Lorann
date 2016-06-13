@@ -33,5 +33,4 @@ public class Pierre {
 	public Image getImage(){
 		return Pierre;
 	}
-
 }

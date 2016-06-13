@@ -16,7 +16,6 @@ public class GameBoard extends JPanel implements KeyListener{
 
 	String Game[][] = new String [20][12];
 	int level = 1;
-	private static ArrayList<Rien> Riens;
 	private static ArrayList<Horizos> Horizoss;
 	private static ArrayList<Verticos> Verticoss;
 	private static ArrayList<Pierre> Pierres;
@@ -28,7 +27,6 @@ public class GameBoard extends JPanel implements KeyListener{
 	private static ArrayList<Idole> Idoles;
 	private static ArrayList<MonstreD> MonstresD;
 	private static ArrayList<Crane> Cranes;*/
-	Rien rien;
 	Horizos horizos;
 	Verticos verticos;
 	Pierre pierre;
@@ -42,6 +40,7 @@ public class GameBoard extends JPanel implements KeyListener{
 	Crane crane;
 	Tombe tombe;
 	FileReader fr;
+	
 
 	public GameBoard(){
 		ChangerLevel();
@@ -61,7 +60,6 @@ public class GameBoard extends JPanel implements KeyListener{
 			Tresors1 = new ArrayList<Tresor1>();
 			Tresors2 = new ArrayList<Tresor2> ();
 			Tresors3 = new ArrayList<Tresor3> ();
-			Riens = new ArrayList<Rien> ();
 			/*Boules = new ArrayList<Boule>() ;
 			Idoles = new ArrayList<Idole>() ;
 			MonstresD = new ArrayList<MonstreD>() ;
@@ -70,12 +68,7 @@ public class GameBoard extends JPanel implements KeyListener{
 			while ((i=fr.read()) != -1){
 				char strImg = (char) i;
 
-				if (strImg == ' '){
-					Game [x][y] = "RIEN";
-					rien = new Rien(x*16,y*16);
-					Riens.add(rien);
-				}
-				else if (strImg == '@'){
+				if (strImg == '@'){
 					Game [x][y] = "LORANN";
 					lorann = new Lorann(x*16,y*16);
 				}
@@ -153,6 +146,7 @@ public class GameBoard extends JPanel implements KeyListener{
 	public void paint(Graphics g){
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D) g;
+		this.setBackground(Color.black);
 
 		for (int i =0; i< Pierres.size(); i++){
 			pierre = (Pierre) Pierres.get(i);
@@ -177,14 +171,6 @@ public class GameBoard extends JPanel implements KeyListener{
 		for (int i =0; i< Tresors3.size(); i++){
 			tresor3 = (Tresor3) Tresors3.get(i);
 			g2d.drawImage(tresor3.getImage(), tresor3.getX(), tresor3.getY(), null);
-		}
-		for (int i =0; i< Riens.size(); i++){
-			rien = (Rien) Riens.get(i);
-			g2d.drawImage(rien.getImage(), rien.getX(), rien.getY(), null);
-		}
-		for (int i =0; i< Riens.size(); i++){
-			rien = (Rien) Riens.get(i);
-			g2d.drawImage(rien.getImage(), rien.getX(), rien.getY(), null);
 		}
 		/*
 		for (int i =0; i< Idoles.size(); i++){
@@ -280,12 +266,6 @@ public class GameBoard extends JPanel implements KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent arg0) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void keyReleased(KeyEvent arg0) {
 		int Touche = arg0.getKeyCode();
 
 		if (Touche == KeyEvent.VK_DOWN){
@@ -332,6 +312,11 @@ public class GameBoard extends JPanel implements KeyListener{
 			ChangerLevel();
 		}
 		repaint();
+	}
+
+	@Override
+	public void keyReleased(KeyEvent arg0) {
+		
 	}
 
 	@Override
