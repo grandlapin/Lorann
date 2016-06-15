@@ -45,20 +45,17 @@ public class GameBoard extends JPanel implements KeyListener{
 	Crane crane;
 	Tombe tombe;
 	Ouverte ouverte;
-	boolean bouletrouvee = false;
 	FileReader fr;
 
 	public GameBoard(){
 		this.setBackground(Color.BLACK);
-		ChangerLevel(bouletrouvee);
+		ChangerLevel();
 		setFocusable(true);
 		addKeyListener(this);
 
 	}
 
-	public void ChangerLevel(boolean bouletrouvee){
-		if (bouletrouvee == false)
-		{
+	public void ChangerLevel(){
 		try{
 			fr = new FileReader("Maps/" + "salle" + "00" + level + ".txt");
 			int x =0,y=0,i=0;
@@ -158,105 +155,39 @@ public class GameBoard extends JPanel implements KeyListener{
 		}
 		catch (Exception ex){}
 		repaint();
-		}
-		else if (bouletrouvee == true)
-	{
-	try{
-		fr = new FileReader("Maps/" + "salle" + "00" + level + ".txt");
-		int x =0,y=0,i=0;
-
-		Horizoss = new ArrayList<Horizos>( );
-		Verticoss = new ArrayList<Verticos>();
-		Pierres = new ArrayList<Pierre> ();
-		Tresors1 = new ArrayList<Tresor1>();
-		Tresors2 = new ArrayList<Tresor2> ();
-		Tresors3 = new ArrayList<Tresor3> ();
-		//Riens = new ArrayList<Rien> ();
-		Boules = new ArrayList<Boule>() ;
-		Idoles = new ArrayList<Idole>() ;
-		MonstresD = new ArrayList<MonstreD>() ;
-		Cranes = new ArrayList<Crane>();
-
-		while ((i=fr.read()) != -1){
-			char strImg = (char) i;
-
-			if (strImg == ' '){
-				Game [x][y] = "RIEN";
-				//rien = new Rien(x*16,y*16);
-				//Riens.add(rien);
-			}
-			else if (strImg == 'Q'){
-				Game [x][y] = "LORANN";
-				lorann = new Lorann(x*16,y*16);
-			}
-			else if (strImg == 'O'){
-				Game [x][y] = "PIERRE";
-				pierre = new Pierre(x*16,y*16);
-				Pierres.add(pierre);
-			}
-			else if (strImg == '-'){
-				Game [x][y] = "HORIZOS";
-				horizos = new Horizos(x*16,y*16);
-				Horizoss.add(horizos);
-			}
-			else if (strImg == 'I'){
-				Game [x][y] = "VERTICOS";
-				verticos = new Verticos(x*16,y*16);
-				Verticoss.add(verticos);
-			}
-			else if (strImg == '1'){
-				Game [x][y] = "TRESOR1";
-				tresor1 = new Tresor1(x*16,y*16);
-				Tresors1.add(tresor1);
-			}
-			else if (strImg == '2'){
-				Game [x][y] = "TRESOR2";
-				tresor2 = new Tresor2(x*16,y*16);
-				Tresors2.add(tresor2);
-			}
-			else if (strImg == '3'){
-				Game [x][y] = "TRESOR3";
-				tresor3 = new Tresor3(x*16,y*16);
-				Tresors3.add(tresor3);
-			}
-			else if (strImg == 'W'){
-				Game [x][y] = "IDOLE";
-				idole = new Idole(x*16,y*16);
-				Idoles.add(idole);
-			}
-			else if (strImg == 'D'){
-				Game [x][y] = "MONSTRED";
-				monstreD = new MonstreD(x*16,y*16);
-				MonstresD.add(monstreD);
-			}
-			else if (strImg == 'Y'){
-				Game [x][y] = "OUVERTE";
-				ouverte = new Ouverte(x*16,y*16);
-				Ouvertes.add(ouverte);
-				
-			}
-			/*else if (strImg == 'Y'){
-				Game [x][y] = "TOMBE";
-				tombe = new Tombe(x*16,y*16);
-				Tombes.add(tombe);
-			}*/
-			else if (strImg == '\r' || strImg == '\n'){
-				x--;
-			}
-			if (x == 19){
-				y++;
-				x = 0;
-			}
-			else {
-				x++;
-			}
-		}
-	}
-	catch (Exception ex){}
-	repaint();
-	}
+		Ouvertes = new ArrayList<Ouverte>() ;
+		ouverte = new Ouverte(lorann.getX()*16,lorann.getY()*16);
 }
+	public void ChangerLevel2(){
+		try{
+			fr = new FileReader("Maps/" + "salle" + "00" + level + ".txt");
+			int x =0,y=0,i=0;
 
+			Ouvertes = new ArrayList<Ouverte>();
+
+			while ((i=fr.read()) != -1){
+				char strImg = (char) i;
+
+				if (strImg == 'Y'){
+					Game [x][y] = "OUVERTE";
+					ouverte = new Ouverte(x*16,y*16);
+					Ouvertes.add(ouverte);
+				}
+				else if (strImg == '\r' || strImg == '\n'){
+					x--;
+				}
+				if (x == 19){
+					y++;
+					x = 0;
+				}
+				else {
+					x++;
+				}
+			}
+		}
+		catch (Exception ex){}
+		repaint();
+}
 
 	public void paint(Graphics g){
 		super.paint(g);
@@ -416,26 +347,22 @@ public class GameBoard extends JPanel implements KeyListener{
 				if (lorann.getDir() == "BAS"){
 					Boules = new ArrayList<Boule>() ;
 					boule = new Boule(lorann.getX()*16,lorann.getY()*16);
-					bouletrouvee = true;
-					ChangerLevel(bouletrouvee);
+					ChangerLevel2();
 				}
 				else if (lorann.getDir() == "HAUT"){
 					Boules = new ArrayList<Boule>() ;
 					boule = new Boule(lorann.getX()*16,lorann.getY()*16);
-					bouletrouvee = true;
-					ChangerLevel(bouletrouvee);
+					ChangerLevel2();
 				}
 				else if (lorann.getDir() == "GAUCHE"){
 					Boules = new ArrayList<Boule>() ;
 					boule = new Boule(lorann.getX()*16,lorann.getY()*16);
-					bouletrouvee = true;
-					ChangerLevel(bouletrouvee);
+					ChangerLevel2();
 				}
 				else if (lorann.getDir() == "DROITE"){
 					Boules = new ArrayList<Boule>() ;
 					boule = new Boule(lorann.getX()*16,lorann.getY()*16);
-					bouletrouvee = true;
-					ChangerLevel(bouletrouvee);
+					ChangerLevel2();
 				}
 				
 			}
@@ -447,44 +374,21 @@ public class GameBoard extends JPanel implements KeyListener{
 
 			if(lorannRec.intersects(ouverteRec)){
 				if (lorann.getDir() == "BAS"){
-					 JFrame fenetre = new JFrame();  
-					    fenetre.setTitle("GG TU AS GAGNE");
-					    fenetre.setSize(400, 100);
-					    fenetre.setLocationRelativeTo(null);
-					    //Termine le processus lorsqu'on clique sur la croix rouge
-					    fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					    //Et enfin, la rendre visible        
-					    fenetre.setVisible(true);
+					 level++;
+					 ChangerLevel();
 				}
 				else if (lorann.getDir() == "HAUT"){
-					 JFrame fenetre = new JFrame();  
-					    fenetre.setTitle("GG TU AS GAGNE");
-					    fenetre.setSize(400, 100);
-					    fenetre.setLocationRelativeTo(null);
-					    //Termine le processus lorsqu'on clique sur la croix rouge
-					    fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					    //Et enfin, la rendre visible        
-					    fenetre.setVisible(true);
+					 level++;
+					 ChangerLevel();
 				}
 				else if (lorann.getDir() == "GAUCHE"){
 					 JFrame fenetre = new JFrame();  
-					    fenetre.setTitle("GG TU AS GAGNE");
-					    fenetre.setSize(400, 100);
-					    fenetre.setLocationRelativeTo(null);
-					    //Termine le processus lorsqu'on clique sur la croix rouge
-					    fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					    //Et enfin, la rendre visible        
-					    fenetre.setVisible(true);
+					 level++;
+					 ChangerLevel();
 				}
 				else if (lorann.getDir() == "DROITE"){
-					 JFrame fenetre = new JFrame();  
-					    fenetre.setTitle("GG TU AS GAGNE");
-					    fenetre.setSize(400, 100);
-					    fenetre.setLocationRelativeTo(null);
-					    //Termine le processus lorsqu'on clique sur la croix rouge
-					    fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-					    //Et enfin, la rendre visible        
-					    fenetre.setVisible(true);
+					 level++;
+					 ChangerLevel();
 				}
 			}
 	}
@@ -518,7 +422,7 @@ public class GameBoard extends JPanel implements KeyListener{
 			CheckCollision();
 		}
 		else if (Touche == KeyEvent.VK_R){
-			ChangerLevel(bouletrouvee);
+			ChangerLevel();
 		}
 		if (Touche == KeyEvent.VK_DOWN){
 			lorann.setDir("BAS");
