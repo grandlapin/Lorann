@@ -5,19 +5,19 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 
 public class Lorann extends Decor implements Movable{
-	String LorannDir = "BAS";
+	String LorannDir = "DOWN";
 	Image Lorann;
 	/**
 	 * select the path to the pictures
 	 */
-	ImageIcon iLorannBas = new ImageIcon ("Images/Lorann/lorann_bas.png");
-	ImageIcon iLorannDroite = new ImageIcon ("Images/Lorann/lorann_droite.png");
-	ImageIcon iLorannGauche = new ImageIcon ("Images/Lorann/lorann_gauche.png");
-	ImageIcon iLorannHaut = new ImageIcon ("Images/Lorann/lorann_haut.png");
-	ImageIcon iLorannBasDroit = new ImageIcon ("Images/Lorann/lorann_diag_BD.png");
-	ImageIcon iLorannBasGauche = new ImageIcon ("Images/Lorann/lorann_diag_BG.png");
-	ImageIcon iLorannHautDroit = new ImageIcon ("Images/Lorann/lorann_diag_HD.png");
-	ImageIcon iLorannHautGauche = new ImageIcon ("Images/Lorann/lorann_diag_HG.png");
+	ImageIcon iLorannDown = new ImageIcon ("Images/Lorann/lorann_bas.png");
+	ImageIcon iLorannRight = new ImageIcon ("Images/Lorann/lorann_droite.png");
+	ImageIcon iLorannLeft = new ImageIcon ("Images/Lorann/lorann_gauche.png");
+	ImageIcon iLorannUp = new ImageIcon ("Images/Lorann/lorann_haut.png");
+	ImageIcon iLorannDownRight = new ImageIcon ("Images/Lorann/lorann_diag_BD.png");
+	ImageIcon iLorannDownLeft = new ImageIcon ("Images/Lorann/lorann_diag_BG.png");
+	ImageIcon iLorannUpRight = new ImageIcon ("Images/Lorann/lorann_diag_HD.png");
+	ImageIcon iLorannUpLeft = new ImageIcon ("Images/Lorann/lorann_diag_HG.png");
 	/**
 	 * set lorann constructor
 	 * @param Startx = base position of verticos in x 
@@ -42,59 +42,59 @@ public class Lorann extends Decor implements Movable{
 	 * definie effects of move method
 	 */
 	public Image getImage(){
-		if(LorannDir == "BAS"){
-			Lorann = iLorannBas.getImage();
+		if(LorannDir == "DOWN"){
+			Lorann = iLorannDown.getImage();
 		}
-		else if (LorannDir == "DROITE"){
-			Lorann = iLorannDroite.getImage();
+		else if (LorannDir == "RIGHT"){
+			Lorann = iLorannRight.getImage();
 		}
-		else if (LorannDir == "GAUCHE"){
-			Lorann = iLorannGauche.getImage();
+		else if (LorannDir == "LEFT"){
+			Lorann = iLorannLeft.getImage();
 		}
 		else if (LorannDir == "Haut"){
-			Lorann = iLorannHaut.getImage();
+			Lorann = iLorannUp.getImage();
 		}		
-		else if (LorannDir == "DIAG HD"){
-			Lorann = iLorannHautDroit.getImage();
+		else if (LorannDir == "DIAG UR"){
+			Lorann = iLorannUpRight.getImage();
 		}
-		else if (LorannDir == "DIAG HG"){
-			Lorann = iLorannHautGauche.getImage();
+		else if (LorannDir == "DIAG UL"){
+			Lorann = iLorannUpLeft.getImage();
 		}
-		else if (LorannDir == "DIAG BG"){
-			Lorann = iLorannBasGauche.getImage();
+		else if (LorannDir == "DIAG DL"){
+			Lorann = iLorannDownLeft.getImage();
 		}
-		else if (LorannDir == "DIAG BD"){
-			Lorann = iLorannBasDroit.getImage();
+		else if (LorannDir == "DIAG DR"){
+			Lorann = iLorannDownRight.getImage();
 		}
 		return Lorann;
 	}
 
 	public void Move(){
-		if(LorannDir == "BAS"){
+		if(LorannDir == "DOWN"){
 			this.y += 16;
 		}
-		else if (LorannDir == "DROITE"){
+		else if (LorannDir == "RIGHT"){
 			this.x += 16;
 		}
-		else if (LorannDir == "GAUCHE"){
+		else if (LorannDir == "LEFT"){
 			this.x -= 16;
 		}
-		else if (LorannDir == "HAUT"){
+		else if (LorannDir == "UP"){
 			this.y -= 16;
 		}
-		else if (LorannDir == "DIAG HD"){
+		else if (LorannDir == "DIAG UR"){
 			this.x += 16;
 			this.y -= 16;
 		}
-		else if (LorannDir == "DIAG HG"){
+		else if (LorannDir == "DIAG UL"){
 			this.x -= 16;
 			this.y -= 16;
 		}
-		else if (LorannDir == "DIAG BG"){
+		else if (LorannDir == "DIAG DL"){
 			this.y += 16;
 			this.x -= 16;
 		}
-		else if (LorannDir == "DIAG BD"){
+		else if (LorannDir == "DIAG DR"){
 			this.y += 16;
 			this.x += 16;
 		}

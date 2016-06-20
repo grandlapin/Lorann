@@ -4,62 +4,62 @@ import java.awt.Image;
 
 import javax.swing.ImageIcon;
 
-public class MonstreD extends Decor{
+public class MonsterD extends Decor{
 
-	Image MonstreD;
-	String MonstreDDir = "HAUT";
+	Image MonsterD;
+	String MonsterDDir = "UP";
 /**
- * set monstreD constructor
+ * set monsterD constructor
  * @param Startx = base position of verticos in x 
  * @param Starty = base position of verticos in y 
  */
-	public MonstreD(int Startx, int Starty){
+	public MonsterD(int Startx, int Starty){
 		x = Startx;
 		y = Starty;
 
-		ImageIcon iMonstreD = new ImageIcon("Images/Monstre/monstreD.png");
-		MonstreD = iMonstreD.getImage();
+		ImageIcon iMonsterD = new ImageIcon("Images/Monstre/monstreD.png");
+		MonsterD = iMonsterD.getImage();
 	}
 		public void setDir(String newDir) {
-			this.MonstreDDir = newDir;
+			this.MonsterDDir = newDir;
 		}
 
 		public String getDir() {
-			return MonstreDDir;
+			return MonsterDDir;
 		}
 		
 	public Image getImage(){
-		return MonstreD;
+		return MonsterD;
 	}
 	/**
 	 * definie effects of move method
 	 */
 		public void Move(){
-		if(MonstreDDir == "BAS"){
+		if(MonsterDDir == "DOWN"){
 			setY(getY()+16);
 		}
-		else if (MonstreDDir == "DROITE"){
+		else if (MonsterDDir == "RIGHT"){
 			setX(getX()+16);
 		}
-		else if (MonstreDDir == "GAUCHE"){
+		else if (MonsterDDir == "LEFT"){
 			setX(getX()-16);
 		}
-		else if (MonstreDDir == "HAUT"){
+		else if (MonsterDDir == "RIGHT"){
 			setY(getY()-16);
 		}
-		else if (MonstreDDir == "DIAG HD"){
+		else if (MonsterDDir == "DIAG UR"){
 			setX(getX()+16);
 			setY(getY()-16);
 		}
-		else if (MonstreDDir == "DIAG HG"){
+		else if (MonsterDDir == "DIAG UL"){
 			setX(getX()-16);
 			setY(getY()-16);
 		}
-		else if (MonstreDDir == "DIAG BG"){
+		else if (MonsterDDir == "DIAG DL"){
 			setY(getY()+16);
 			setX(getX()-16);
 		}
-		else if (MonstreDDir == "DIAG BD"){
+		else if (MonsterDDir == "DIAG DR"){
 			setY(getY()+16);
 			setX(getX()+16);
 		}
