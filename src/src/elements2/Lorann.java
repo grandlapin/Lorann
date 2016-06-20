@@ -1,16 +1,15 @@
 package src.elements2;
 
 import java.awt.Image;
-import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
-public class Lorann {
-
-	
-	int x,y;
+public class Lorann extends Decor implements Movable{
 	String LorannDir = "BAS";
-	Image Mario;
+	Image Lorann;
+	/**
+	 * select the path to the pictures
+	 */
 	ImageIcon iLorannBas = new ImageIcon ("Images/Lorann/lorann_bas.png");
 	ImageIcon iLorannDroite = new ImageIcon ("Images/Lorann/lorann_droite.png");
 	ImageIcon iLorannGauche = new ImageIcon ("Images/Lorann/lorann_gauche.png");
@@ -19,67 +18,55 @@ public class Lorann {
 	ImageIcon iLorannBasGauche = new ImageIcon ("Images/Lorann/lorann_diag_BG.png");
 	ImageIcon iLorannHautDroit = new ImageIcon ("Images/Lorann/lorann_diag_HD.png");
 	ImageIcon iLorannHautGauche = new ImageIcon ("Images/Lorann/lorann_diag_HG.png");
-	
+	/**
+	 * set lorann constructor
+	 * @param Startx = base position of verticos in x 
+	 * @param Starty = base position of verticos in y 
+	 */
 	public Lorann(int Startx, int Starty){
 		x = Startx;
 		y = Starty;
 	}
 
-	public Rectangle getBounds(){
-		Rectangle Box = new Rectangle (x,y,16,16);
-		return Box;
-	}
 
-	public int getX() {
-		return x;
-	}
-	
-	public int getY() {
-		return y;
-	}
-	
 	public String getDir() {
 		return LorannDir;
 	}
-	
-	public void setX(int newX) {
-		this.x = newX;
-	}
-	
-	public void setY(int newY) {
-		this.y = newY;
-	}
-	
+
+
+
 	public void setDir(String newDir) {
 		this.LorannDir = newDir;
 	}
-
+	/**
+	 * definie effects of move method
+	 */
 	public Image getImage(){
 		if(LorannDir == "BAS"){
-			Mario = iLorannBas.getImage();
+			Lorann = iLorannBas.getImage();
 		}
 		else if (LorannDir == "DROITE"){
-			Mario = iLorannDroite.getImage();
+			Lorann = iLorannDroite.getImage();
 		}
 		else if (LorannDir == "GAUCHE"){
-			Mario = iLorannGauche.getImage();
+			Lorann = iLorannGauche.getImage();
 		}
 		else if (LorannDir == "Haut"){
-			Mario = iLorannHaut.getImage();
+			Lorann = iLorannHaut.getImage();
 		}		
 		else if (LorannDir == "DIAG HD"){
-			Mario = iLorannHautDroit.getImage();
+			Lorann = iLorannHautDroit.getImage();
 		}
 		else if (LorannDir == "DIAG HG"){
-			Mario = iLorannGauche.getImage();
+			Lorann = iLorannHautGauche.getImage();
 		}
 		else if (LorannDir == "DIAG BG"){
-			Mario = iLorannHaut.getImage();
+			Lorann = iLorannBasGauche.getImage();
 		}
 		else if (LorannDir == "DIAG BD"){
-			Mario = iLorannHaut.getImage();
+			Lorann = iLorannBasDroit.getImage();
 		}
-		return Mario;
+		return Lorann;
 	}
 
 	public void Move(){

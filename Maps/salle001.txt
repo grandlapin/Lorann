@@ -1,12 +1,11 @@
-      O-O---------O 
-   O--O2I         OO
-   I 3  I          I
-O--O    I   1      I
-I 1 O---O-----O    O
-I1  WD      Q    @ Y
-I 1 O---O-----O    O
-O--O    I   1      I
-   I 3  I          I
-   O--O2I         OO
-      O-O---------O 
-                    
+O---O--O-OO-O--O---O
+I        II        I
+I        II    A   O
+O        II        I
+I                  O
+I   W       Q X  @ Y
+I                  O
+O        II        I
+I        II        O
+I        II        I
+O---O--O-OO-O--O---O 

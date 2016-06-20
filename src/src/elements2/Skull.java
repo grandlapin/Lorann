@@ -1,16 +1,18 @@
 package src.elements2;
 
 import java.awt.Image;
-import java.awt.Rectangle;
 
 import javax.swing.ImageIcon;
 
-public class Crane {
+public class Skull extends Decor{
 
-	int x,y;
 	Image Crane;
-
-	public Crane(int Startx, int Starty){
+/**
+ * set crane constructor
+ * @param Startx => base position of verticos in x 
+ * @param Starty => base position of verticos in y 
+ */
+	public Skull(int Startx, int Starty){
 		x = Startx;
 		y = Starty;
 
@@ -19,16 +21,6 @@ public class Crane {
 
 	}
 
-	public Rectangle getBounds(){
-		Rectangle Box = new Rectangle (x,y,16,16);
-		return Box;
-	}
-	public int getX() {
-		return x;
-	}
-	public int getY() {
-		return y;
-	}
 
 	public Image getImage(){
 		return Crane;
