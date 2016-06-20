@@ -9,8 +9,8 @@ public class Skull extends Decor{
 	Image Crane;
 /**
  * set crane constructor
- * @param Startx => base position of verticos in x 
- * @param Starty => base position of verticos in y 
+ * @param Startx =  base position of verticos in x 
+ * @param Starty =  base position of verticos in y 
  */
 	public Skull(int Startx, int Starty){
 		x = Startx;
